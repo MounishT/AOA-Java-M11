@@ -1,41 +1,43 @@
-
-# EX 1A Print All Numbers 
-## DATE: 07/8/2025
+# EX 1A Reverse a String
+## DATE:26-05-2025
 ## AIM:
-To Write a Java program that takes an integer input N from the user and prints all the numbers from 1 to N, separated by spaces, on a single line..
+To write a program to create a recursive function to reverse a string.
 
 ## Algorithm
-1. Start the program and import the `Scanner` class to take user input.
-2. Create a `Scanner` object to read an integer input `N` from the user.
-3. Check if `N` is greater than 0; if not, display `"Invalid input. N must be greater than 0."`
-4. Use a `for` loop to iterate from 1 to `N`.
-5. Print each number separated by a space on the same line.
+1.Define a recursive function revstr that takes a string as input.
 
+2.Check if the length of the string is zero (base case).
+
+3.If true, return the string.
+
+4.Otherwise, call revstr on the substring excluding the first character and concatenate the first character at the end.
+
+5.Take input from the user and call the recursive function.
+
+6.Print the result 
+ 
 
 ## Program:
 ```
-/*
 Program to implement Reverse a String
 Developed by: T MOUNISH
 Register Number: 212223240098
-*/
-
-import java.util.*;
-public class PrintNum{
-    public static void main(String[] args){
-        Scanner sc=new Scanner(System.in);
-        int n=sc.nextInt();
-        for(int i=1;i<=n;i++){
-            System.out.print(i+" ");
-        }
-    }
-}
+```
+```py
+def rev(a):
+    if len(a)==0:
+        return a
+    return rev(a[1:]) + a[0]
+    
+a=input()
+print(rev(a))
 ```
 
 ## Output:
-<img width="491" height="159" alt="image" src="https://github.com/user-attachments/assets/ef5e3fdf-c4da-46c2-b207-43343d9ccad8" />
+![image](https://github.com/user-attachments/assets/c9c73f00-243c-4dcf-aa77-8dbd5d2df114)
+
 
 
 
 ## Result:
-The program successfully print all the numbers from 1 to N. 
+The program successfully reverses the input string using recursion. When the user provides an input string, the output displays the reversed version of the string
