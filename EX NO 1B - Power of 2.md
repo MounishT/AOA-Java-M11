@@ -1,82 +1,57 @@
-# EX 1B Merge Sort
-## DATE: 26-05-2025
+
+# EX 1B Power of 2
+## DATE: 08/08/2025
 ## AIM:
-To write a python program to sort the first half of the list using merge sort.
+To write a Java program to for given constraints.Given an integer n, return true if it is a power of two. Otherwise, return false.
+
+An integer n is a power of two, if there exists an integer x such that n == 2x.
 
 ## Algorithm
-1.If the array has more than one element, split it into two halves.
-2.Recursively apply merge sort on both halves.
-3.Compare elements of both halves and merge them into a sorted array.
-4.Copy any remaining elements from the left or right half.
-5.Return the fully sorted array.   
+1. Start the program and import the `Scanner` class to take input from the user.
+2. Read an integer `n` using the `Scanner` object.
+3. Check if `n` is less than or equal to 0 — if true, return `false`.
+4. Use the bitwise operation `(n & (n - 1)) == 0` to check if `n` is a power of two.
+5. Print `true` if the condition holds, otherwise print `false`.
+
 
 ## Program:
 ```
-Program to implement Merge Sort
+/*
+Program to implement Reverse a String
 Developed by: T MOUNISH
 Register Number: 212223240098
-```
-```py
-def mergesort(li):
-    if len(li) > 1:
-        mid = len(li) // 2
-        a = li[:mid]
-        b = li[mid:]
+*/
+import java.util.Scanner;
 
-        mergesort(a)
-        mergesort(b)
+public class Solution {
 
-        i = j = k = 0
+    public boolean isPowerOfTwo(int n) {
+     if (n<=0){
+         return false;
+     }
+     return (n&(n-1))==0;
+     
+     
+    }
 
-        while i < len(a) and j < len(b):
-            if a[i] < b[j]:
-                li[k] = a[i]
-                i += 1
-            else:
-                li[k] = b[j]
-                j += 1
-            k += 1
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Solution sol = new Solution();
+        int n = scanner.nextInt();
 
-        while i < len(a):
-            li[k] = a[i]
-            i += 1
-            k += 1
+        boolean result = sol.isPowerOfTwo(n);
+        System.out.println(result);
 
-        while j < len(b):
-            li[k] = b[j]
-            j += 1
-            k += 1
-    
-    if len(li) == n:
-        mid = len(li) // 2
-        
-        for i in range(mid):
-            print(li[i], end=" ")
+        scanner.close();
+    }
+}
 
-      
-
-li = []
-m = []
-n = int(input())  
-for _ in range(n):
-    a = int(input())
-    li.append(a)
-    m.append(a)
-
-print("Given array is")
-print(*li)  
-print("\nSorted array is")
-mid = len(li)//2
-mergesort(li) 
-for i in range(0,mid):
-    print(m[i], end=" ")
 ```
 
 ## Output:
 
-![image](https://github.com/user-attachments/assets/f74a5909-1377-4410-bf2c-6d4d8dc1a0aa)
-
+<img width="419" height="186" alt="image" src="https://github.com/user-attachments/assets/f9c06840-da38-4cd9-ba23-55b69673e617" />
 
 
 ## Result:
-The program successfully sorts the first half of the given array using merge sort. where only the first half is sorted, and the second half remains unchanged.
+The program successfully implemented and the expected output is verified.
